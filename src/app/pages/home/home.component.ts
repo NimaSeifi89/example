@@ -6,7 +6,6 @@ import { MyButtonComponent } from '../../my-core/my-button/my-button.component';
 import { MyDialogComponent } from '../../my-core/my-dialog/my-dialog.component';
 import { MyGridComponent } from '../../my-core/my-grid/my-grid.component';
 import { MyHeaderComponent } from '../../my-core/my-header/my-header.component';
-import { FormatPricePipe } from '../../my-core/pipes/format-price.pipe';
 
 
 @Component({
