@@ -1,0 +1,15 @@
+.my-green-btn {
+    background-color: #4caf50 !important;
+    color: white !important;
+    border: none !important;
+    font-weight: bold;
+    border-radius: 8px;
+    padding: 0.5rem 1.5rem;
+    box-shadow: 0 4px 6px rgba(0, 0, 0, 0.2);
+    transition: background-color 0.3s ease;
+    max-width: 110px;
+}
+
+.my-green-btn:hover {
+    background-color: #388e3c !important;
+}

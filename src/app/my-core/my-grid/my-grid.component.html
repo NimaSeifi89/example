@@ -1,0 +1,36 @@
+<p-table [value]="products">
+    <ng-template pTemplate="header">
+        <tr>
+            <th>ردیف</th>
+            <th *ngFor="let col of columns">{{ col.header }}</th>
+            <th>عملیات</th>
+        </tr>
+    </ng-template>
+
+    <ng-template pTemplate="body"
+        let-product
+        let-rowIndex="rowIndex">
+        <tr>
+            <td>{{ rowIndex + 1 }}</td>
+            <td *ngFor="let col of columns">
+                <span *ngIf="col.formatted">
+                    {{ product[col.field] | formatPrice }}
+                </span>
+                <span *ngIf="!col.formatted">
+                  {{ product[col.field] }}
+                </span>
+              </td>
+            <td>
+                <i class="pi pi-pencil"
+                    (click)="onEdit(product)"
+                    style="font-size: 1.5rem; color: green; cursor: pointer;">
+                </i>
+
+                <i class="pi pi-trash"
+                    (click)="onDelete(product)"
+                    style="font-size: 1.5rem; color: red; margin-left: 10px; cursor: pointer;">
+                </i>
+            </td>
+        </tr>
+    </ng-template>
+</p-table>

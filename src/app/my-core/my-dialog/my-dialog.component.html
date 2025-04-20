@@ -1,0 +1,23 @@
+<div *ngIf="visible" class="my-dialog-backdrop">
+  <div class="my-dialog">
+    <div class="dialog-header">
+      <h3 class="title">{{ title }}</h3>
+      <button class="close-btn" (click)="onCancel()">×</button>
+    </div>
+
+    <div class="dialog-body">
+      <ng-content></ng-content>
+    </div>
+
+    <div class="actions">
+      <my-button [label]="confirmLabel"
+                 class="my-green-btn"
+                 (clicked)="onConfirm()">
+      </my-button>
+      <my-button [label]="cancelLabel"
+                 class="my-gray-btn"
+                 (clicked)="onCancel()">
+      </my-button>
+    </div>
+  </div>
+</div>

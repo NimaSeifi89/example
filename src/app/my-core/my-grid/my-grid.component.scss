@@ -1,0 +1,65 @@
+:host ::ng-deep .pi {
+  transition: transform 0.2s;
+}
+
+:host ::ng-deep .pi:hover {
+  transform: scale(1.2);
+}
+
+p-table {
+  margin: 20px 0;
+}
+
+th,
+td {
+  text-align: center !important;
+}
+
+tr {
+  transition: background-color 0.3s ease-in-out;
+  height: 35px;
+}
+
+tr:nth-child(odd) {
+  background-color: #e8e7e7;
+}
+
+tr:nth-child(even) {
+  background-color: #fff;
+}
+
+tr:hover {
+  background-color: #e0f7fa;
+}
+
+td {
+  padding: 12px 8px;
+  border: 1px solid #ddd;
+}
+
+th {
+  background-color: rgb(201, 201, 201) !important;
+  color: #333;
+  padding: 12px 8px;
+  font-weight: bold;
+  border: 1px solid #ddd;
+}
+
+.actions i {
+  margin-left: 10px;
+  font-size: 1.5rem;
+  cursor: pointer;
+}
+
+.actions i.pi-pencil {
+  color: green;
+}
+
+.actions i.pi-trash {
+  color: red;
+
+}
+
+.pi-trash {
+  margin-right: 10px !important;
+}

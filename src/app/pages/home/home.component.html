@@ -1,0 +1,50 @@
+<my-header [count]="productList.length + ''"></my-header>
+
+<div class="content">
+    <my-button label="افزودن کالا"
+        class="my-green-btn mt-20"
+        (clicked)="addItem()">
+    </my-button>
+
+    <my-grid [products]="productList"
+        [columns]="columns"
+        (editClicked)="onEdit($event)"
+        (deleteClicked)="onDelete($event)">
+    </my-grid>
+
+    <my-dialog [title]="isEditMode? 'ویرایش کالا':'افزودن کالا'"
+        [visible]="showDialog"
+        [confirmLabel]="'ذخیره'"
+        [cancelLabel]="'بستن'"
+        (confirmed)="saveProduct()"
+        (cancelled)="showDialog = false">
+
+        <div class="form-group">
+            <label for="productName">نام کالا:</label>
+            <input id="productName"
+                type="text"
+                [(ngModel)]="newProduct.name" />
+        </div>
+
+        <div class="form-group">
+            <label for="productPrice">قیمت:</label>
+            <input id="productPrice"
+                type="text"
+                [(ngModel)]="newProduct.price"
+                placeholder="قیمت کالا" />
+        </div>
+
+    </my-dialog>
+
+    <my-dialog [title]="'حذف کالا'"
+        [visible]="showDeleteDialog"
+        [confirmLabel]="'حذف'"
+        [cancelLabel]="'انصراف'"
+        (confirmed)="deleteProduct()"
+        (cancelled)="showDeleteDialog = false">
+
+        <p>آیا از حذف <strong>{{ productToDelete?.name }}</strong> مطمئن هستید؟</p>
+
+    </my-dialog>
+
+</div>
