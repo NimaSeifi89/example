@@ -18,11 +18,9 @@ import { FormatPricePipe } from '../../my-core/pipes/format-price.pipe';
     CommonModule,
     MyDialogComponent,
     MyHeaderComponent,
-    FormatPricePipe,
   ],
   templateUrl: './home.component.html',
   styleUrl: './home.component.scss',
-  providers: [FormatPricePipe] 
 })
 export class HomeComponent {
 
