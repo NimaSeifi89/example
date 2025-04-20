@@ -2,10 +2,12 @@ import { CommonModule } from '@angular/common';
 import { Component } from '@angular/core';
 import { FormsModule } from '@angular/forms';
 import { DialogModule } from 'primeng/dialog';
+import { IProduct } from '../../my-core/interfaces/product';
 import { MyButtonComponent } from '../../my-core/my-button/my-button.component';
 import { MyDialogComponent } from '../../my-core/my-dialog/my-dialog.component';
 import { MyGridComponent } from '../../my-core/my-grid/my-grid.component';
 import { MyHeaderComponent } from '../../my-core/my-header/my-header.component';
+import { IColumn } from '../../my-core/my-grid/my-grid.interface';
 
 
 @Component({
@@ -27,29 +29,18 @@ export class HomeComponent {
   isEditMode = false;
   editIndex: number | null = null;
 
-  newProduct = {
+  newProduct: IProduct = {
     id: 0,
     name: '',
     price: 0
   };
 
-  columns = [
+  columns: IColumn[] = [
     { header: 'نام کالا', field: 'name', formatted: false },
     { header: 'قیمت کالا', field: 'price', formatted: true },
   ];
 
-  productList = [
-    {
-      id: 1,
-      name: 'کالا ۱',
-      price: 100
-    },
-    {
-      id: 2,
-      name: 'کالا ۲',
-      price: 200
-    },
-  ];
+  productList: IProduct[] = [];
 
   addItem() {
     this.isEditMode = false;
@@ -103,3 +94,4 @@ export class HomeComponent {
   }
 
 }
+
